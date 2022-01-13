@@ -46,9 +46,7 @@ export const Upload: FC<IUploadProps> = (props) => {
         const formData = new FormData();
         formData.append("file", file, file.name);
 
-        console.log(file);
-
-        const res = await fetch("http://localhost:3001/analyze", {
+        const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/analyze`, {
           method: "POST",
           body: formData,
         });
@@ -56,7 +54,7 @@ export const Upload: FC<IUploadProps> = (props) => {
         const data = await res.json();
         onChange(data);
       } catch (e) {
-        onChange(null);
+        resetFile();
       }
     };
 
