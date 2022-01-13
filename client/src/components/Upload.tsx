@@ -10,7 +10,6 @@ import { ParsedPDF } from "../types";
 import { BoxBase, Button } from "./Common";
 
 const UploadBox = styled(BoxBase)`
-  align-self: flex-start;
   gap: 0.5em;
 `;
 

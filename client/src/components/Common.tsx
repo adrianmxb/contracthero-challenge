@@ -8,8 +8,6 @@ export const Container = styled.div`
 
 export const BoxBase = styled.div`
   display: flex;
-  justify-content: center;
-  flex: 1;
 `;
 
 export const Button = styled.button`
