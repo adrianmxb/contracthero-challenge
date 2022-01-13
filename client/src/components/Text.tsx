@@ -27,6 +27,7 @@ export const Text: FC<ITextProps> = (props) => {
         readOnly
         style={{ height: `${text.length}em` }}
         value={text.join("\n")}
+        onDoubleClick={(e) => e.currentTarget.select()}
       ></TextContent>
     </TextWrapper>
   );
