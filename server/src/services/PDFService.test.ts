@@ -12,6 +12,13 @@ describe("PDFService", () => {
     const pdf = Buffer.from(base64EncodedPdf, "base64");
     const parsedFile = await pdfService.parseFile(pdf);
 
-    expect(parsedFile[0][0]).toBe("Test");
+    return expect(parsedFile[0][0]).toBe("Test");
   });
+
+  it("should fail when we pass an incorrect file", async () => {
+    const invalidPdf = Buffer.from("txt files are cool");
+    const parsedFilePromise = pdfService.parseFile(invalidPdf)
+
+    return expect(parsedFilePromise).rejects.toThrow();
+  })
 });
