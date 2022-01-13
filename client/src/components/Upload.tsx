@@ -45,6 +45,9 @@ export const Upload: FC<IUploadProps> = (props) => {
       try {
         const formData = new FormData();
         formData.append("file", file, file.name);
+
+        console.log(file);
+
         const res = await fetch("http://localhost:3001/analyze", {
           method: "POST",
           body: formData,

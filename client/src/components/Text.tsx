@@ -22,7 +22,7 @@ export const Text: FC<ITextProps> = (props) => {
   const { page, text } = props;
   return (
     <TextWrapper>
-      <H2>Page {page}</H2>
+      <H2>Page {page + 1}</H2>
       <TextContent
         readOnly
         style={{ height: `${text.length}em` }}

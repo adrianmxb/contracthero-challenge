@@ -1,4 +1,3 @@
-
 export type ParsedPDF = {
-    parsedContent: string[][];
+  parsedContent: string[][];
 };

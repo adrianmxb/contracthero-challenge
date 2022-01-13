@@ -9,12 +9,18 @@ const OutputBox = styled(BoxBase)`
 `;
 
 interface IOutputProps {
-    pdfContent: ParsedPDF | null;
+  pdfContent: ParsedPDF | null;
 }
 
 export const Output: FC<IOutputProps> = (props) => {
-    const {pdfContent} = props;
-  return <OutputBox>
-      {pdfContent ? pdfContent.parsedContent.map((content, idx) => <Text key={idx} text={content} page={idx}></Text>) : null}
-  </OutputBox>;
+  const { pdfContent } = props;
+  return (
+    <OutputBox>
+      {pdfContent
+        ? pdfContent.parsedContent.map((content, idx) => (
+            <Text key={idx} text={content} page={idx}></Text>
+          ))
+        : null}
+    </OutputBox>
+  );
 };
